@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+<head>
+     <link rel="stylesheet" href="lib/style.css">
+    <script src="lib/script.js"></script>
+    <meta charset="UTF-8">
+   
+   <style>
+ @keyframes efect {
+    from {
+        transform: scale(1);
+        opacity: 0,3;
+        border:3px double #00ACC1;
+        border-radius:50px;
+    }
+    to {
+        transform: scale(1.2);
+        opacity: 1;
+        background-color:lightblue;
+        border:7px double #00ACC1;
+        border-radius:50px;
+    }
+}      
+
+body {
+    background-color: #E0F7FA;
+}
+
+.img {
+    width: 300px;
+    height: 300px;
+    margin: 8px;
+    padding:1px;
+    border-radius:50px;
+    
+}
+
+.img:hover {
+    animation-name:efect;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;  
+   -ms-transform:  scale(1.5); 
+   -webkit-transform: scale(1.5); 
+    transform: scale(1.5); 
+    animation-iteration-count: alternate;
+    animation-direction: alternate; 
+
+}
+h1{
+  font-family: Algerian;
+  font-size: 42px;
+  color: 	#00BCD4;
+  font-style: italic;
+}
+   </style>
+</head>
+<script>
+    function resimekle(img_sayi) {
+    for (var i = 1; i <= img_sayi; i++) {
+        resim = document.createElement("img");
+        resim.src = "https://source.unsplash.com/random/300*300" + i + ".jpg";
+        resim.className = "img";
+        document.body.appendChild(resim);
+    }
+}
+</script>
+
+<body style="text-align:center" onload="resimekle(15)">
+  <h1>Uranyum Resim Galerisi</h1>
+<hr>
+</body>
+
+</html>
